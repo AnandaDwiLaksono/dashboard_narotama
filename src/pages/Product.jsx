@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
+
 import { Header, Footer, Navbar, Sidebar, Table } from "../components"
-import { Column_Product } from "../components/column"
 import axiosInstance from "../utils/http-interceptors"
 
 
@@ -38,6 +38,57 @@ const Product = () => {
 
     fetchData()
   }, []) // Empty dependency array to ensure the effect runs once on mount
+
+  const Column_Product = [
+    {
+        Header: 'Kode Produk',
+        accessor: 'product_code',
+    },
+    {
+        Header: 'Nama Produk',
+        accessor: 'product_name'
+    },
+    {
+        Header: 'Harga Dasar',
+        accessor: 'harga_dasar',
+        Cell: row => (
+            <span>
+            Rp {numberFormat.format(row.value)}
+            </span>
+        ),
+    },
+    {
+        Header: 'Harga Jual',
+        accessor: 'harga_jual',
+        Cell: row => (
+            <span>
+            Rp {numberFormat.format(row.value)}
+            </span>
+        ),
+    },
+    {
+        Header: 'Cashback',
+        accessor: 'cashback',
+        Cell: row => (
+            <span>
+            Rp {numberFormat.format(row.value)}
+            </span>
+        ),
+    },
+    {
+        Header: 'Status',
+        accessor: 'status',
+        Cell: row => (
+            <span className={`px-4 py-2 rounded-lg text-current ${row.value ? 'bg-success' : 'bg-error'}`}>
+              {row.value ? 'Active' : 'Inactive'}
+            </span>
+        ),
+    },
+    {
+        Header: 'Deskripsi Produk',
+        accessor: 'product_description',
+    },
+  ]
 
   console.log(data)
 
