@@ -1,0 +1,18 @@
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar-thumb {
+  background-color: #8494a1;
+  border-radius: 5px;
+}
+
+/* Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar-track {
+  background-color: #DDE6ED;
+  border-radius: 5px;
+}
+
+
